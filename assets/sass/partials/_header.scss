@@ -1,0 +1,140 @@
+/**
+ * Head title
+ */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding:$spacing-unit/3;
+	color: $grey-color;
+
+	h1 {
+		font-family: $header-font-family;
+		margin-bottom: 0;
+		font-size: 2.5rem;
+		height: 50px;
+	}
+	a {
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.title-g {
+
+}
+
+/**
+ * Search form
+ */
+
+
+.form-wrapper {
+	margin-top: 23px;
+	display: flex;
+	.form-input {
+		width: 130px;
+		height: 30px;
+		border-right: none;
+		margin-bottom: 0;
+		&:focus {
+			border-right: none;
+		}
+	}
+	.form-submit {
+		width: 35px;
+		height: 30px;
+	}
+}
+
+
+
+
+
+
+/**
+ * Navigation
+ */
+
+.menu-all-pages-container {
+    width: auto;
+	padding: 2px 0;
+	border-top: 2px solid $grey-color-light;
+	border-bottom: 2px solid $grey-color-light;
+}
+
+.menu-all-pages-container > * {
+	font-size: .65rem;
+}
+
+.menu-all-pages-container ul {
+
+	padding-left:0px;
+	margin:0px;
+}
+
+.menu-all-pages-container > ul li{
+	//display:inline-block;
+	position:relative;
+	text-transform:uppercase;
+	margin:3px 2px;
+	position:relative;
+}
+.menu-all-pages-container > ul > li > a{
+	color:$text-color-black;
+	display:inline-block;
+	padding:8px 20px;
+}
+.menu-all-pages-container > ul > li > a:hover,
+.menu-all-pages-container > ul > li > a:focus,
+.menu-all-pages-container > ul > li.current-menu-item > a{
+	color:$brown-color;
+}
+.menu-all-pages-container ul ul{
+
+	background-color:$grey-color-light;
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+	min-width:170px;
+	z-index:1;
+	visibility:hidden;
+
+	transition:all 0.5s ease-in-out;
+}
+.menu-all-pages-container ul li:hover > ul{
+	opacity:1;
+	visibility:visible;
+}
+.menu-all-pages-container ul ul li{
+	width:100%;
+}
+.menu-all-pages-container ul ul li a{
+	display: inline-block;
+    line-height: 1.5;
+    padding: 5px;
+	color:$brown-color;
+	width:100%;
+}
+.menu-all-pages-container ul ul li a:hover,
+.menu-all-pages-container ul ul li a:focus{
+	color:$brown-color;
+}
+.menu-all-pages-container ul ul ul{
+	left:98%;
+	top:-3px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.menu-item {
+	flex-grow: 1;
+}
+

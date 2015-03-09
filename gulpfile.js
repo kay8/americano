@@ -1,0 +1,109 @@
+'use strict';
+
+var gulp = require('gulp'),
+	browserSync = require('browser-sync'),
+	critical = require('critical'),
+	$ = require('gulp-load-plugins')({
+			pattern: ['gulp-*', 'gulp.*'],
+			replaceString: /\bgulp[\-.]/,
+			rename: {
+				'gulp-pleeease': 'please',
+				'gulp-minify-css': 'minifyCSS'
+			}
+
+	});
+
+
+/**
+ * Settings
+ */
+
+
+// directory
+var dir = {
+	current: '.',
+	css: '.',
+	sass: 'assets/sass',
+	js: 'js',
+	min: 'assets/min',
+	partials: 'assets/sass/partials'
+};
+
+// error notification settings for plumber
+var plumberErrorHandler = { errorHandler: $.notify.onError({
+		title: 'Gulp',
+		message: "Error: <%= error.message %>"
+	})
+};
+
+
+/**
+ * Tasks
+ */
+
+
+// set up localhost and synchronize browser
+gulp.task('browser-sync', function () {
+    browserSync({
+        proxy: 'localhost:8200',
+        browser: "google chrome"
+    });
+});
+
+// reload browser when js / html file changes
+gulp.task('bs-reload', function () {
+    browserSync.reload();
+});
+
+// compile sass
+gulp.task('sass', function() {
+	return gulp.src(dir.sass + '/*.scss')
+	.pipe($.plumber(plumberErrorHandler))
+	.pipe($.sass())
+	.pipe($.please({
+		autoprefixer: {"browsers": ["last 2 versions"]},
+		minifier: false
+	}))
+	.pipe($.csscomb())
+	.pipe(gulp.dest(dir.css))
+	.pipe(browserSync.reload({stream: true}));
+});
+
+// minify css
+gulp.task('minifyCSS', function() {
+    return gulp.src([dir.css + '/style.css'])
+		.pipe($.plumber(plumberErrorHandler))
+        .pipe($.minifyCSS())
+        .pipe($.rename({suffix: '.min'}))
+        .pipe(gulp.dest(dir.css))
+        .pipe(browserSync.reload({stream: true}));
+});
+
+// minify js
+gulp.task('uglify', function() {
+    return gulp.src([dir.js + '/*.js'])
+		.pipe($.plumber(plumberErrorHandler))
+        .pipe($.uglify())
+        .pipe($.rename({suffix: '.min'}))
+        .pipe(gulp.dest(dir.js))
+        .pipe(browserSync.reload({stream: true}));
+});
+
+// Concatenates files
+gulp.task('concat', function() {
+});
+
+/// watch
+gulp.task('watch', function() {
+	gulp.watch(dir.js + '/*.js',['bs-reload']);
+	gulp.watch(dir.sass + '/*.scss',['sass']);
+	gulp.watch(dir.partials + '/*.scss', ['sass']);
+	gulp.watch(dir.current + '/*.php',['bs-reload']);
+});
+
+
+// default
+gulp.task('default', ['browser-sync', 'watch']);
+
+// release
+gulp.task('release', ['browser-sync', 'watch', 'minifyCSS', 'uglify']);
