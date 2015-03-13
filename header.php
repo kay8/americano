@@ -86,7 +86,7 @@
 
 	<!-- This is an un-minified, complete version of Modernizr.
 		 Before you move to production, you should generate a custom build that only has the detects you need. -->
-	<script src="<?php echo get_template_directory_uri(); ?>/_/js/modernizr-2.8.0.dev.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_/js/modernizr.custom.js"></script>
 
 	<!-- Application-specific meta tags -->
 	<?php
@@ -139,11 +139,15 @@
 
 
 		<nav id="nav" role="navigation">
-			<?php wp_nav_menu( array(
-				'menu' => 'primary',
-				'menu_class' => 'menu'
+			<div class="toggle">MENU</div>
+			<div class="menu-all-pages-container">
+				<?php wp_nav_menu( array(
+					'menu' => 'primary',
+					'menu_class' => 'menu',
+					'container' => false
 
-				) ); ?>
+					) ); ?>
+			</div>
 		</nav>
 
 

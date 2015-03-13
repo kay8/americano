@@ -1611,6 +1611,11 @@ table tr td
     box-sizing: border-box;
 }
 
+html
+{
+    margin-top: 0 !important;
+}
+
 body
 {
     font-family: 'Droid Serif', serif;
@@ -1618,7 +1623,7 @@ body
     font-weight: 300;
     line-height: 1.5;
 
-    color: #444;
+    color: #212121;
     background-color: #fdfdfd;
 
     -webkit-text-size-adjust: 100%;
@@ -1721,14 +1726,14 @@ a:link
 
 ::-moz-selection
 {
-    color: #444;
+    color: #212121;
     background: #c1f1ec;
     text-shadow: none;
 }
 
 ::selection
 {
-    color: #444;
+    color: #212121;
     background: #c1f1ec;
     text-shadow: none;
 }
@@ -1750,15 +1755,14 @@ textarea:-moz-placeholder
 blockquote
 {
     font-size: 14px;
-    font-size: .9rem;
     font-style: italic; 
 
     padding-left: 15px;
 
     letter-spacing: -0;
-    letter-spacing: -.05rem;
+    letter-spacing: -.01rem;
 
-    color: #444;
+    color: #212121;
     border-left: 4px solid #828282;
 }
 blockquote a
@@ -1780,7 +1784,9 @@ code
 {
     font-size: 15px;
 
-    overflow: auto; 
+    overflow: auto;
+
+    white-space: pre-wrap; 
 
     border: 1px solid #828282;
     border-radius: 3px;
@@ -1809,7 +1815,7 @@ mark
 {
     text-decoration: none; 
 
-    color: #444;
+    color: #212121;
     background-color: #f6f7fa;
 }
 
@@ -1836,7 +1842,7 @@ input[type='color']
 {
     margin-bottom: 5px; 
 
-    color: #26a69a;
+    color: #828282;
     background: #fdfdfd;
     box-shadow: none;
 }
@@ -1881,6 +1887,7 @@ input[type='submit']:hover
 {
     overflow: hidden;
 
+    min-width: 480px;
     max-width: calc(1024px - (30px * 2));
     min-height: 100%;
     margin-right: auto;
@@ -1974,7 +1981,7 @@ header a:hover
 /**
  * Navigation
  */
-.menu-all-pages-container
+nav
 {
     width: auto;
     padding: 2px 0;
@@ -1983,7 +1990,17 @@ header a:hover
     border-bottom: 2px solid #f6f7fa;
 }
 
-.menu-all-pages-container > *
+.toggle
+{
+    display: none;
+
+    margin: 3px 0;
+    padding: 8px 0; 
+
+    text-align: center;
+}
+
+nav > *
 {
     font-size: 10px;
     font-size: .65rem;
@@ -1997,7 +2014,6 @@ header a:hover
 
 .menu-all-pages-container > ul li
 {
-    position: relative;
     position: relative; 
 
     margin: 3px 2px;
@@ -2011,7 +2027,7 @@ header a:hover
 
     padding: 8px 20px; 
 
-    color: #444;
+    color: #212121;
 }
 
 .menu-all-pages-container > ul > li > a:hover,
@@ -2090,16 +2106,45 @@ header a:hover
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+            justify-content: space-around;
 }
 
-.menu-item
+/**
+ * Media query
+ */
+@media screen and (max-width: 800px)
 {
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
+    .toggle
+    {
+        display: block;
+    }
+    .menu-all-pages-container
+    {
+        display: none;
+    }
+    .menu-all-pages-container ul
+    {
+        margin: 0; 
+        padding: 0;
+    }
+    .menu-all-pages-container > ul li
+    {
+        width: 100%; 
+        margin: 3px 0;
+
+        text-align: center;
+    }
+    .menu-all-pages-container ul ul li a
+    {
+        padding: 5px 0;
+    }
+    .menu-all-pages-container ul ul ul
+    {
+        top: 30px; 
+        left: 0;
+    }
 }
 
 /**
@@ -2218,6 +2263,11 @@ main img
 
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.wp-caption
+{
+    max-width: 100%;
 }
 
 .wp-caption-text
@@ -2383,5 +2433,13 @@ ul.post-info li
     .side ol
     {
         margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    #wpadminbar
+    {
+        position: fixed !important;
     }
 }

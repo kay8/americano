@@ -88,6 +88,10 @@ main {
 	padding-bottom: $spacing-unit/2;
 }
 
+.wp-caption {
+	max-width: 100%;
+}
+
 .wp-caption-text {
 	color: $grey-color;
     font-style: italic;
@@ -123,7 +127,7 @@ main {
 .side {
 	font-size: .9rem;
 	.widget-title {
-		color: darken($text-color-grey, 60%);
+		color: darken($grey-color-text, 60%);
 	}
 	ul {
 		opacity: .85;
@@ -222,4 +226,11 @@ ul.post-info {
 }
 
 @include media-query($on-mobile) {
+}
+
+// fixing admin bar not to overwrap main element
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+		position: fixed !important;
+	}
 }
