@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Playball);
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif);
 
 
 html,
@@ -1618,7 +1618,7 @@ html
 
 body
 {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Noto Serif', serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
@@ -1629,6 +1629,20 @@ body
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
             text-size-adjust: 100%;
+}
+
+::-moz-selection
+{
+    color: #212121;
+    background: #c1f1ec;
+    text-shadow: none;
+}
+
+::selection
+{
+    color: #212121;
+    background: #c1f1ec;
+    text-shadow: none;
 }
 
 /**
@@ -1648,7 +1662,7 @@ ol,
 dl,
 figure
 {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Noto Serif', serif;
 
     margin-bottom: 15px;
 }
@@ -1701,7 +1715,7 @@ h4,
 h5,
 h6
 {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /**
@@ -1724,43 +1738,18 @@ a:link
     -webkit-tap-highlight-color: #26a69a;
 }
 
-::-moz-selection
-{
-    color: #212121;
-    background: #c1f1ec;
-    text-shadow: none;
-}
-
-::selection
-{
-    color: #212121;
-    background: #c1f1ec;
-    text-shadow: none;
-}
-
-/* Mozilla dosen't style place holders by default */
-input:-moz-placeholder
-{
-    color: #a9a9a9;
-}
-
-textarea:-moz-placeholder
-{
-    color: #a9a9a9;
-}
-
 /**
  * Blockquotes
  */
 blockquote
 {
-    font-size: 14px;
-    font-style: italic; 
+    font-size: 15px;
+    font-size: .95rem;
 
     padding-left: 15px;
 
     letter-spacing: -0;
-    letter-spacing: -.01rem;
+    letter-spacing: -.01rem; 
 
     color: #212121;
     border-left: 4px solid #828282;
@@ -1838,11 +1827,11 @@ input[type='search'],
 input[type='tel'],
 input[type='time'],
 input[type='url'],
-input[type='color']
+input[type='color'],
+textarea
 {
     margin-bottom: 5px; 
 
-    color: #828282;
     background: #fdfdfd;
     box-shadow: none;
 }
@@ -1859,7 +1848,8 @@ input[type='search']:focus,
 input[type='tel']:focus,
 input[type='time']:focus,
 input[type='url']:focus,
-input[type='color']:focus
+input[type='color']:focus,
+textarea:focus
 {
     border: 1px solid #26a69a;
 }
@@ -1878,6 +1868,16 @@ input[type='submit']:hover
     opacity: .7;
 
     filter: alpha(opacity=70);
+}
+
+input:-moz-placeholder
+{
+    color: #828282;
+}
+
+textarea:-moz-placeholder
+{
+    color: #828282;
 }
 
 /**
@@ -1925,7 +1925,7 @@ header
     display: -ms-flexbox;
     display:         flex;
 
-    padding: 10px;
+    padding: 15px 10px;
 
     color: #828282; 
 
@@ -1937,9 +1937,8 @@ header h1
 {
     font-family: 'Playball', cursive;
     font-size: 40px;
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
 
-    height: 50px; 
     margin-bottom: 0;
 }
 header a:hover
@@ -1947,6 +1946,11 @@ header a:hover
     opacity: 1;
 
     filter: alpha(opacity=100);
+}
+
+.title-g
+{
+    height: 100px;
 }
 
 /**
@@ -1958,7 +1962,7 @@ header a:hover
     display: -ms-flexbox;
     display:         flex; 
 
-    margin-top: 23px;
+    margin-top: 35px;
 }
 .form-wrapper .form-input
 {
@@ -2196,7 +2200,7 @@ main h1,
 main h2,
 main h3
 {
-    font-weight: 600;
+    font-weight: 700;
 }
 main h4,
 main h5,
@@ -2248,6 +2252,11 @@ main ul li
 main ol li
 {
     list-style-type: decimal;
+}
+main li
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 main img
 {
@@ -2325,9 +2334,15 @@ main img
 }
 .side ul
 {
+    margin-left: 10px; 
+
     opacity: .85;
 
     filter: alpha(opacity=85);
+}
+.side li
+{
+    margin-bottom: 4px;
 }
 
 /**
@@ -2364,6 +2379,15 @@ main img
 .respond-wrapper p
 {
     font-size: 14px;
+}
+
+.reply-elem
+{
+    padding: 2px 0;
+}
+.reply-elem label
+{
+    padding-bottom: 3px;
 }
 
 /**

@@ -62,30 +62,32 @@
 
 		<?php else : ?>
 
-			<div>
+			<div class="reply-elem">
+				<label for="author"><?php _e('Name','html5reset'); ?> <?php if ($req) echo "*required"; ?></label>
 				<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-				<label for="author"><?php _e('Name','html5reset'); ?> <?php if ($req) echo "(required)"; ?></label>
+
 			</div>
 
-			<div>
+			<div class="reply-elem">
+				<label for="email"><?php _e('Mail (not be published)','html5reset'); ?> <?php if ($req) echo "*required"; ?></label>
 				<input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-				<label for="email"><?php _e('Mail (will not be published)','html5reset'); ?> <?php if ($req) echo "(required)"; ?></label>
 			</div>
 
-			<div>
-				<input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
+			<div class="reply-elem">
 				<label for="url"><?php _e('Website','html5reset'); ?></label>
+				<input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
 			</div>
 
 		<?php endif; ?>
 
 		<!--<p>You can use these tags: <code><?php echo allowed_tags(); ?></code></p>-->
 
-		<div>
+		<div class="reply-elem">
+			<label for="comment"><?php _e('Comment','html5reset'); ?></label>
 			<textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea>
 		</div>
 
-		<div>
+		<div class="reply-elem">
 			<input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment','html5reset'); ?>" />
 			<?php comment_id_fields(); ?>
 		</div>

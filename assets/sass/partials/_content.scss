@@ -35,7 +35,7 @@ main {
 	}
 
 	h1, h2, h3 {
-		font-weight: 600;
+		font-weight: 700;
 	}
 	h4, h5, h6 {
 		font-weight: 400;
@@ -75,6 +75,10 @@ main {
     ol li {
         list-style-type: decimal;
     }
+    li {
+    	margin-top: 4px;
+    	margin-bottom: 4px;
+	}
 
     img {
         margin: 0 auto;
@@ -131,6 +135,10 @@ main {
 	}
 	ul {
 		opacity: .85;
+		margin-left: $spacing-unit/3;
+	}
+	li {
+		margin-bottom: 4px;
 	}
 }
 
@@ -159,6 +167,14 @@ main {
 	}
 	p {
 		font-size: $small-font-size;
+	}
+}
+
+.reply-elem {
+	padding: 2px 0;
+	label {
+		padding-bottom: 3px;
+
 	}
 }
 

@@ -5,14 +5,13 @@
 header {
 	display: flex;
 	justify-content: space-between;
-	padding:$spacing-unit/3;
+	padding:$spacing-unit/2 $spacing-unit/3;
 	color: $grey-color;
 
 	h1 {
 		font-family: $header-font-family;
 		margin-bottom: 0;
 		font-size: 2.5rem;
-		height: 50px;
 	}
 	a {
 		&:hover {
@@ -22,7 +21,7 @@ header {
 }
 
 .title-g {
-
+	height: 100px;
 }
 
 /**
@@ -31,7 +30,7 @@ header {
 
 
 .form-wrapper {
-	margin-top: 23px;
+	margin-top: 35px;
 	display: flex;
 	.form-input {
 		width: 130px;
@@ -56,13 +55,6 @@ header {
 /**
  * Navigation
  */
-
-// .menu-all-pages-container {
-//     width: auto;
-// 	padding: 2px 0;
-// 	border-top: 2px solid $grey-color-light;
-// 	border-bottom: 2px solid $grey-color-light;
-// }
 
 nav {
     width: auto;

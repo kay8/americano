@@ -1,6 +1,6 @@
 @charset "utf-8";
 // Variables
-$base-font-family: 'Droid Serif',serif;
+$base-font-family: 'Noto Serif',serif;
 $header-font-family: 'Playball',cursive;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
@@ -62,6 +62,12 @@ body {
     text-size-adjust: 100%;
 }
 
+::selection {
+    background: lighten($green-color, 45%);
+    color: $black-color-text;
+    text-shadow: none;
+}
+
 
 
 /**
@@ -115,12 +121,11 @@ li {
 }
 
 
-
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 
@@ -141,15 +146,6 @@ a {
     }
 }
 
-::selection {
-    background: lighten($green-color, 45%);
-    color: $black-color-text;
-    text-shadow: none;
-}
-
-/* Mozilla dosen't style place holders by default */
-input:-moz-placeholder { color:#a9a9a9; }
-textarea:-moz-placeholder { color:#a9a9a9; }
 
 /**
  * Blockquotes
@@ -158,9 +154,9 @@ blockquote {
     color: $black-color-text;
     border-left: 4px solid $grey-color;
     padding-left: $spacing-unit / 2;
-    font-size: $small-font-size;
+    //font-size: $small-font-size;
+    font-size: 0.95rem;
     letter-spacing: -0.01rem;
-    font-style: italic;
     a {
         color: $grey-color;
         text-decoration: underline;
@@ -169,7 +165,6 @@ blockquote {
         margin-bottom: 0;
     }
 }
-
 
 
 /**
@@ -210,8 +205,8 @@ mark {
     font-weight: bold;
 }
 
-input[type='text'], input[type='password'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='email'], input[type='number'], input[type='search'], input[type='tel'], input[type='time'], input[type='url'], input[type='color'] {
-    color: $grey-color;
+input[type='text'], input[type='password'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='email'], input[type='number'], input[type='search'], input[type='tel'], input[type='time'], input[type='url'], input[type='color'],
+textarea {
     background: $background-color;
     box-shadow: none;
     margin-bottom: 5px;
@@ -229,6 +224,10 @@ input[type='submit'] {
         opacity: 0.7;
     }
 }
+
+// Mozilla dosen't style place holders by default
+input:-moz-placeholder { color:$grey-color; }
+textarea:-moz-placeholder { color:$grey-color; }
 
 
 /**
