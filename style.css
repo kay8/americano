@@ -2,6 +2,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif);
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 
 html,
 body,
@@ -1619,7 +1623,7 @@ html
 body
 {
     font-family: 'Noto Serif', serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 300;
     line-height: 1.5;
 
@@ -1664,7 +1668,12 @@ figure
 {
     font-family: 'Noto Serif', serif;
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+p
+{
+    font-size: 17px;
 }
 
 /**
@@ -1687,7 +1696,7 @@ figure > img
 
 figcaption
 {
-    font-size: 14px;
+    font-size: 14.875px;
 }
 
 /**
@@ -1743,16 +1752,23 @@ a:link
  */
 blockquote
 {
-    font-size: 15px;
-    font-size: .95rem;
+    font-size: 18px;
+    font-size: 1.15rem;
+    font-style: italic; 
 
-    padding-left: 15px;
+    padding: 7px 0 7px 15px;
 
-    letter-spacing: -0;
-    letter-spacing: -.01rem; 
+    letter-spacing: normal;
 
+    opacity: .8;
     color: #212121;
     border-left: 4px solid #828282;
+
+    filter: alpha(opacity=80);
+}
+blockquote p
+{
+    font-size: inherit;
 }
 blockquote a
 {
@@ -1899,7 +1915,6 @@ textarea:-moz-placeholder
 {
     .wrapper
     {
-        max-width: calc(1024px - (30px));
         padding-right: 15px;
         padding-left: 15px;
     }
@@ -1925,7 +1940,7 @@ header
     display: -ms-flexbox;
     display:         flex;
 
-    padding: 15px 10px;
+    padding: 20px 13.33333px;
 
     color: #828282; 
 
@@ -1940,6 +1955,10 @@ header h1
     font-size: 2.5rem; 
 
     margin-bottom: 0;
+}
+header .description
+{
+    font-size: 16.15px;
 }
 header a:hover
 {
@@ -2025,7 +2044,7 @@ nav > *
     text-transform: uppercase;
 }
 
-.menu-all-pages-container > ul > li > a
+.menu-all-pages-container ul > li > a
 {
     display: inline-block;
 
@@ -2168,7 +2187,7 @@ nav > *
 main,
 .side
 {
-    padding: 15px;
+    padding: 20px 15px;
 }
 
 .side
@@ -2187,8 +2206,8 @@ main article
 {
     line-height: 1.7; 
 
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 13.33333px;
 
     border-bottom: 1px dashed #828282;
 }
@@ -2217,17 +2236,28 @@ main h2
 {
     font-size: 24px;
     font-size: 1.5rem;
+
+    margin-top: 40px;
+}
+main .entry-title-home
+{
+    font-size: 26px;
+    font-size: 1.625rem;
+
+    margin-top: 0;
 }
 main h3
 {
     font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     line-height: 1.5;
+
+    margin-top: 40px;
 }
 main h4
 {
     font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
 }
 main h5,
 main h6
@@ -2238,12 +2268,14 @@ main h6
 main ul,
 main ol
 {
+    font-size: 17px; 
+
     list-style: initial;
 }
 main ul p,
 main ol p
 {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 main ul li
 {
@@ -2260,9 +2292,11 @@ main li
 }
 main img
 {
-    display: block; 
+    display: block;
 
-    margin: 0 auto;
+    margin: 0;
+
+    border-radius: 4px;
 }
 
 .entry
@@ -2270,8 +2304,15 @@ main img
     font-size: 16px;
     font-size: 1rem;
 
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.entry h2
+{
+    margin-top: 40px;
+    padding-left: 7px; 
+
+    border-bottom: solid 3px #a63232;
 }
 
 .wp-caption
@@ -2281,8 +2322,10 @@ main img
 
 .wp-caption-text
 {
-    font-size: 14px;
-    font-style: italic;
+    font-size: 14.875px;
+    font-style: normal;
+
+    margin-top: 7px;
 
     text-align: center; 
 
@@ -2296,18 +2339,19 @@ main img
 .post-info,
 .postmetadata
 {
-    font-size: 14px;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 14.875px;
 
     color: #828282;
 }
 
 .navigation
 {
-    font-size: 14px;
+    font-size: 14.875px;
 
     display: block;
 
-    margin-top: 15px; 
+    margin-top: 20px; 
 
     text-align: center;
 }
@@ -2330,19 +2374,27 @@ main img
 }
 .side .widget-title
 {
+    font-family: 'Open Sans', sans-serif; 
+
     color: #575e5e;
 }
-.side ul
+.side ul,
+.side .tagcloud
 {
     margin-left: 10px; 
 
-    opacity: .85;
+    opacity: .8;
 
-    filter: alpha(opacity=85);
+    filter: alpha(opacity=80);
 }
 .side li
 {
     margin-bottom: 4px;
+}
+
+.tagcloud
+{
+    margin-bottom: 20px;
 }
 
 /**
@@ -2354,12 +2406,12 @@ main img
     font-size: 1.25rem; 
     font-weight: normal;
 
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .commentlist
 {
-    font-size: 14px;
+    font-size: 14.875px;
 }
 .commentlist p
 {
@@ -2368,7 +2420,7 @@ main img
 
 .respond-wrapper
 {
-    padding-top: 15px;
+    padding-top: 20px;
 }
 .respond-wrapper h2
 {
@@ -2378,7 +2430,7 @@ main img
 }
 .respond-wrapper p
 {
-    font-size: 14px;
+    font-size: 14.875px;
 }
 
 .reply-elem
@@ -2398,7 +2450,7 @@ main img
     display: block;
 
     width: 100%;
-    padding: 15px 0 30px 0; 
+    padding: 20px 0 40px 0; 
 
     text-align: center;
 
@@ -2424,15 +2476,15 @@ main img
  */
 .post-comment p
 {
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
-ul.post-info
+.post-info
 {
-    margin-left: 0; 
-    padding-top: 15px;
+    margin-bottom: 20px; 
+    margin-left: 0;
 }
-ul.post-info li
+.post-info li
 {
     list-style-type: none;
 }
@@ -2454,9 +2506,14 @@ ul.post-info li
         width: 100%;
     }
     .side ul,
-    .side ol
+    .side ol,
+    .side .tagcloud
     {
         margin-left: 0;
+    }
+    .widget-title
+    {
+        border-bottom: 3px solid #f6f7fa;
     }
 }
 

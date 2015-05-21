@@ -8,7 +8,7 @@
 }
 
 main, .side {
-	padding: $spacing-unit/2;
+	padding: $spacing-unit/2 $spacing-unit-side/2;
 }
 
 .side {
@@ -23,11 +23,10 @@ main, .side {
 main {
 
 	width: 75%;
-
 	article {
 		border-bottom: 1px dashed $grey-color;
 		padding-top: $spacing-unit;
-		padding-bottom: $spacing-unit;
+		padding-bottom: $spacing-unit/3;
 		line-height: $article-line-height;
 		&:first-child {
 			padding-top: 0;
@@ -47,16 +46,22 @@ main {
 
 	h2 {
         font-size: 1.5rem;
+        margin-top: $spacing-unit;
+    }
+    .entry-title-home {
+    	font-size: 1.625rem;
+    	margin-top: 0;
     }
 
     h3 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         line-height: 1.5;
+        margin-top: $spacing-unit;
 
     }
 
     h4 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
     }
 
 	h5, h6 {
@@ -65,8 +70,9 @@ main {
 
     ul, ol {
         list-style: initial;
+        font-size: $base-font-size;
         p {
-            margin-bottom: $spacing-unit / 6;
+            margin-bottom: $spacing-unit / 5;
         }
     }
     ul li {
@@ -81,8 +87,9 @@ main {
 	}
 
     img {
-        margin: 0 auto;
+        margin: 0;
         display: block;
+        border-radius: 4px;
     }
 }
 
@@ -90,6 +97,12 @@ main {
 	font-size: 1rem;
 	padding-top: $spacing-unit/2;
 	padding-bottom: $spacing-unit/2;
+	h2 {
+		margin-top: $spacing-unit;
+        border-bottom: solid 3px $brown-color-light;
+        padding-left: 7px;
+
+	}
 }
 
 .wp-caption {
@@ -98,8 +111,9 @@ main {
 
 .wp-caption-text {
 	color: $grey-color;
-    font-style: italic;
+    font-style: normal;
     font-size: $small-font-size;
+    margin-top: 7px;
     a {
         color: $grey-color;
     }
@@ -110,6 +124,7 @@ main {
 .postmetadata {
 	font-size: $small-font-size;
 	color: $grey-color;
+	font-family: $sub-font-family;
 }
 
 .navigation {
@@ -121,7 +136,7 @@ main {
 .next-posts,
 .prev-posts {
 	display: inline-block;
-	padding: 0 $spacing-unit;
+	padding: 0 30px;
 }
 
 /**
@@ -132,14 +147,21 @@ main {
 	font-size: .9rem;
 	.widget-title {
 		color: darken($grey-color-text, 60%);
+		font-family: $sub-font-family;
+
+
 	}
-	ul {
-		opacity: .85;
-		margin-left: $spacing-unit/3;
+	ul, .tagcloud {
+		opacity: .8;
+		margin-left: $spacing-unit-side/3;
 	}
 	li {
 		margin-bottom: 4px;
 	}
+}
+
+.tagcloud {
+	margin-bottom: $spacing-unit/2;
 }
 
 /**
@@ -215,9 +237,9 @@ main {
  	}
  }
 
-ul.post-info {
-	padding-top: $spacing-unit/2;
+.post-info {
 	margin-left: 0;
+	margin-bottom: $spacing-unit / 2;
 	li {
 		list-style-type: none;
 	}
@@ -236,8 +258,12 @@ ul.post-info {
 		width: 100%;
 	}
 	.side ul,
-	.side ol {
+	.side ol,
+	.side .tagcloud {
 		margin-left: 0;
+	}
+	.widget-title {
+		border-bottom: 3px solid $grey-color-light;
 	}
 }
 

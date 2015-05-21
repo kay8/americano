@@ -10,22 +10,20 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>" class="article-content">
 
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
-			<div class="entry-content">
+				<ul class="post-info">
+					<li><?php posted_on(); ?></li>
+					<li><?php the_tags( __('Tags: ','html5reset'), ', ', ''); ?></li>
+				</ul>
+
+			<div class="entry">
 
 				<?php the_content(); ?>
 
 				<?php wp_link_pages(array('before' => __('Pages: ','html5reset'), 'next_or_number' => 'number')); ?>
-
-
-
-				<ul class="post-info">
-					<li><?php the_tags( __('Tags: ','html5reset'), ', ', ''); ?></li>
-					<li><?php posted_on(); ?></li>
-				</ul>
 
 			</div>
 
@@ -37,7 +35,6 @@
 	</div>
 	<?php endwhile; endif; ?>
 
-<?php post_navigation(); ?>
 </main>
 <?php get_sidebar(); ?>
 </div>

@@ -2,14 +2,16 @@
 // Variables
 $base-font-family: 'Noto Serif',serif;
 $header-font-family: 'Playball',cursive;
-$base-font-size:   16px;
+$sub-font-family: 'Open Sans', sans-serif;
+$base-font-size:   17px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 $article-line-height: 1.7;
 
-$spacing-unit:     30px;
+$spacing-unit:     40px;
+$spacing-unit-side:     30px;
 
-$black-color-text:       #212121; // or 444?
+$black-color-text:       #212121;
 $white-color-text:       #fefefe;
 $grey-color-text:       #f3f4f4;
 
@@ -17,6 +19,7 @@ $background-color: #fdfdfd; //white
 $background-color2: #f9f9f9; //white / grey
 
 $brown-color:      #900000;
+$brown-color-light:#a63232;
 $green-color:      #26A69A;
 $grey-color:       #828282;
 $grey-color-light: #f6f7fa;
@@ -81,6 +84,9 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+p {
+    font-size: $base-font-size;
+}
 
 
 /**
@@ -110,7 +116,8 @@ figcaption {
  * Lists
  */
 ul, ol {
-    margin-left: $spacing-unit;
+    //margin-left: $spacing-unit;
+    margin-left: 30px;
 }
 
 li {
@@ -152,11 +159,15 @@ a {
  */
 blockquote {
     color: $black-color-text;
+    opacity: 0.8;
     border-left: 4px solid $grey-color;
-    padding-left: $spacing-unit / 2;
-    //font-size: $small-font-size;
-    font-size: 0.95rem;
-    letter-spacing: -0.01rem;
+    padding: 7px 0 7px 15px;
+    font-size: 1.15rem;
+    letter-spacing: normal;
+    font-style: italic;
+    p {
+        font-size: inherit;
+    }
     a {
         color: $grey-color;
         text-decoration: underline;
@@ -236,20 +247,17 @@ textarea:-moz-placeholder { color:$grey-color; }
 .wrapper {
     min-height: 100%;
     overflow: hidden;
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: calc(#{$content-width} - (#{$spacing-unit-side} * 2));
     min-width: $content-mini-width;
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    padding-right: $spacing-unit-side;
+    padding-left: $spacing-unit-side;
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+        padding-right: $spacing-unit-side / 2;
+        padding-left: $spacing-unit-side / 2;
     }
 }
 

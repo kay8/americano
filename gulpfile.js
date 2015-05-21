@@ -45,7 +45,7 @@ var plumberErrorHandler = { errorHandler: $.notify.onError({
 // set up localhost and synchronize browser
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: 'localhost:8200',
+        proxy: 'localhost:8500',
         browser: "google chrome"
     });
 });
